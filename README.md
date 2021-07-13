@@ -13,7 +13,7 @@ To use these kits:
 * Add .xaml and .cs files of the kit(s) which you would like to add, to your project file.
 * You can easily use the kit(s) in your project by calling their names. You can view properties and functions of them below.
 
-1. **SECombobox**
+1. **[SECombobox](Kits/SECombobox/README.md)**
    - Properties
      - `ArrowBrush`
      - `ThisBorderBrush`
