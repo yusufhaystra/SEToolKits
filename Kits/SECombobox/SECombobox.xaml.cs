@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -45,7 +46,7 @@ namespace FutbolOyuncuBilgileri.Kartlar
 
         public static readonly DependencyProperty RightColumnWidthProperty = DependencyProperty.Register("RightColumnWidth", typeof(double), typeof(SECombobox), new PropertyMetadata(32d));
 
-        public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register("ItemsSource1", typeof(IEnumerable), typeof(SECombobox), new PropertyMetadata(new PropertyChangedCallback(ItemsSourceChanged)));
+        public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register("ItemsSource", typeof(IEnumerable), typeof(SECombobox), new PropertyMetadata(ItemsSourceChanged));
 
         private bool _IsLeftClickOn { get; set; }
 
@@ -154,8 +155,9 @@ namespace FutbolOyuncuBilgileri.Kartlar
         }
 
         /// <summary>
-        /// Represents item source of the combobox item.
+        /// Represents items source of the combobox item.
         /// </summary>
+
         public IEnumerable ItemsSource
         {
             get { return (IEnumerable)GetValue(ItemsSourceProperty); }
